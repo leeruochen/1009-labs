@@ -1,11 +1,9 @@
 package github.com_1009_lab.lwjgl3;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-public class Entity {
+public abstract class Entity implements iMovable {
     protected float x;
     protected float y;
     protected float speed;
@@ -36,9 +34,7 @@ public class Entity {
 
     public void draw(ShapeRenderer shapeRenderer){};
     public void draw(SpriteBatch spriteBatch){};
+    public void movement(){};
 
-    public void movement() {
-        if (Gdx.input.isKeyPressed(Keys.LEFT)){x -= speed;}
-        if (Gdx.input.isKeyPressed(Keys.RIGHT)){x += speed;}
-    }
+    public abstract void update();
 }

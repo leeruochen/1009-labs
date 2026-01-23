@@ -37,4 +37,9 @@ public class Circle extends Entity {
         if (Gdx.input.isKeyPressed(Keys.UP)){y += speed;}
         if (Gdx.input.isKeyPressed(Keys.DOWN)){y -= speed;}
     }
+
+    @Override
+    public void update() {
+        System.out.printf("In Circle of radius %f at %f, %f position.\n", radius, x, y);
+    }
 }

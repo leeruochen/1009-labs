@@ -38,4 +38,9 @@ public class Triangle extends Entity {
         if (Gdx.input.isKeyPressed(Keys.A)){x -= speed;}
         if (Gdx.input.isKeyPressed(Keys.D)){x += speed;}
     }
+
+    @Override
+    public void update() {
+        System.out.printf("In Triangle of size %f at %f, %f position.\n", size, x, y);
+    }
 }
