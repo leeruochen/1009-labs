@@ -14,8 +14,8 @@ public class TextureObject extends Entity {
         this.isUser = false;
     }
 
-    public TextureObject(String filePath, float x, float y, boolean isUser) {
-        super(x, y, 5.0f, "white"); // speed and color are not used here
+    public TextureObject(String filePath, float x, float y, boolean isUser, float speed) {
+        super(x, y, speed, "white"); // speed and color are not used here
         texture = new Texture(Gdx.files.internal(filePath));
         this.isUser = isUser;
     }
@@ -31,6 +31,14 @@ public class TextureObject extends Entity {
         if (isUser) {
             if (Gdx.input.isKeyPressed(Keys.LEFT)){x -= speed;}
             if (Gdx.input.isKeyPressed(Keys.RIGHT)){x += speed;}
+        } else {
+            y -= speed;
+
+            if (y < 0) {
+                y = Gdx.graphics.getHeight();
+                x = (float)(Math.random() * (Gdx.graphics.getWidth() - texture.getWidth()));
+                if (speed < 5.0f) speed += 0.5f;
+            }
         }
     }
 
