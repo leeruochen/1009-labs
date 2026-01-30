@@ -27,7 +27,7 @@ public class TextureObject extends Entity {
         spriteBatch.draw(texture, x, y, texture.getWidth(), texture.getHeight());
     }
 
-    public void movement () {
+    public void movement () { // method override from iMovable
         if (isUser) {
             if (Gdx.input.isKeyPressed(Keys.LEFT)){x -= speed;}
             if (Gdx.input.isKeyPressed(Keys.RIGHT)){x += speed;}
