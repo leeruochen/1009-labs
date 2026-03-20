@@ -82,6 +82,7 @@ bool BinManager::addParts(int binNumber, int numParts)
     // Point to the correct bin based on user choice
     switch (binNumber)
     { // if user enters 1, point to bin1, if user enters 2, point to bin2
+        // bin is created during the construction of BinManager, we just need to point to it here, we do not need to create a new bin
     case 1:
         pBin = &bin1;
         break;
